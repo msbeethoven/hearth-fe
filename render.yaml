@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: my-react-app
+    repo: https://github.com/msbeethoven/hearth-fe
+    branch: main
+    buildCommand: npm run build
+    startCommand: npm start
+    env:
+      - key: NODE_ENV
+        value: production
+    instances: 1
+    plan: starter

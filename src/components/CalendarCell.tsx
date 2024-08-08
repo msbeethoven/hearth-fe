@@ -23,7 +23,6 @@ function CalendarCell({ date, holidays, empty = false }: CalendarCellProps) {
   return (
     <Cell empty={empty}>
       {date}
-      {/* {console.log('nanette', holidays[0])} */}
       {holidays && holidays.map((holiday, index) => (
         <Holiday key={index} color={index === 0 ? 'red' : 'blue'}>
           {holiday.localName}

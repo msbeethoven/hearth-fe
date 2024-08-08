@@ -48,8 +48,6 @@ function Calendar({ selectedMonth, country1, country2 }: CalendarProps) {
         });
 
         setHolidays(filteredHolidays);
-
-        console.log("Filtered holidays:", filteredHolidays);
       } catch (error) {
         console.error("Error fetching holidays", error);
       }
@@ -62,11 +60,8 @@ function Calendar({ selectedMonth, country1, country2 }: CalendarProps) {
   const year = 2024; 
   let firstDay = new Date(Date.UTC(year, monthIndex, 1)).getDay();
 
-  console.log("First day of the month (index) before adjustment:", firstDay); 
-
   // Manually adjust the first day (push back by one day)
   firstDay = (firstDay + 1) % 7; // Adjustment subtracts 1 from firstDay and uses modulo 7 to wrap around correctly if the result is negative.
-  console.log("First day of the month (index) after adjustment:", firstDay);
 
   const daysInMonth = DAYS_IN_MONTH[selectedMonth];
 
