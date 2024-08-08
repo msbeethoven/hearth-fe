@@ -2,13 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { DAYS_OF_WEEK, DAYS_IN_MONTH, MONTH_ARRAY } from "../constants";
 import CalendarCell from "./CalendarCell";
-//import styled from "styled-components";
 import { CalendarGrid } from "../styles/Calendar.styles";
-
-// const CalendarGrid = styled.div`
-//   display: grid;
-//   grid-template-columns: repeat(7, 1fr);
-// `;
 
 interface CalendarProps {
   selectedMonth: string;
