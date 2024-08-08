@@ -1,3 +1,10 @@
+# Steps to run locally: 
+- `yarn install` (not much added however this will cover packages like axios)
+ - `yarn start`
+
+![Screenshots From Project](FR_US.png)
+![Screenshots From Project](SL_CY.png)
+
 # Hearth Frontend Take Home Interview
 ## Welcome to Hearth's Frontend Take Home Interview. 
 
