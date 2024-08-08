@@ -1,9 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders App component with calendar", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  // Dropdowns
+  expect(screen.getByRole("combobox", { name: /month/i })).toBeInTheDocument();
+  expect(screen.getByRole("combobox", { name: /country/i })).toBeInTheDocument();
+
+  // Grid
+  expect(screen.getByText("Sunday")).toBeInTheDocument();
+  expect(screen.getByText("Monday")).toBeInTheDocument();
 });
