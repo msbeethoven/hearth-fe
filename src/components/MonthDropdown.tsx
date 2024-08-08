@@ -1,3 +1,4 @@
+//MonthDropdown.tsx
 import React from "react";
 import styled from "styled-components";
 import { MONTH_ARRAY } from "../constants";
@@ -13,16 +14,20 @@ interface Props {
   setSelectedMonth: (value: string) => void;
 }
 
-const MonthDropdown = ({ selectedMonth, setSelectedMonth }: Props) => {
-  const handleChange = (e: any): void => setSelectedMonth(e.target.value);
+function MonthDropdown({ selectedMonth, setSelectedMonth }: Props) {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    setSelectedMonth(e.target.value);
+  };
 
   return (
     <Select value={selectedMonth} onChange={handleChange}>
       {MONTH_ARRAY.map((month) => (
-        <option value={month}>{month}</option>
+        <option key={month} value={month}>
+          {month}
+        </option>
       ))}
     </Select>
   );
-};
+}
 
 export default MonthDropdown;
