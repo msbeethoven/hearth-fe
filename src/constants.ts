@@ -1,4 +1,3 @@
-// constants.ts
 export const BASE_URL = "https://date.nager.at/api/v3/publicholidays/2024";
 
 export interface Holiday {
@@ -148,7 +147,3 @@ export const COUNTRIES = [
   { code: "VN", name: "Vietnam" },
   { code: "ZW", name: "Zimbabwe" },
 ];
-
-
-
-

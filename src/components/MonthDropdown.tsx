@@ -1,4 +1,3 @@
-//MonthDropdown.tsx
 import React from "react";
 import styled from "styled-components";
 import { MONTH_ARRAY } from "../constants";

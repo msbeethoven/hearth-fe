@@ -49,7 +49,6 @@ function Calendar({ selectedMonth, country1, country2 }: CalendarProps) {
 
         setHolidays(filteredHolidays);
 
-        // Log the holidays object
         console.log("Filtered holidays:", filteredHolidays);
       } catch (error) {
         console.error("Error fetching holidays", error);
@@ -59,27 +58,23 @@ function Calendar({ selectedMonth, country1, country2 }: CalendarProps) {
     fetchHolidays();
   }, [selectedMonth, country1, country2]);
 
-  // Correctly determine the first day of the month
   const monthIndex = MONTH_ARRAY.indexOf(selectedMonth);
-  const year = 2024; // Ensure this is the correct year
-  let firstDay = new Date(Date.UTC(year, monthIndex, 1)).getDay(); // Get the day of the week
+  const year = 2024; 
+  let firstDay = new Date(Date.UTC(year, monthIndex, 1)).getDay();
 
-  // Log the first day value to check
-  console.log("First day of the month (index) before adjustment:", firstDay); // Index of the week (0-6)
+  console.log("First day of the month (index) before adjustment:", firstDay); 
 
   // Manually adjust the first day (push back by one day)
-  firstDay = (firstDay + 1) % 7; // Shift forward by one day and wrap around if needed
+  firstDay = (firstDay + 1) % 7; // Adjustment subtracts 1 from firstDay and uses modulo 7 to wrap around correctly if the result is negative.
   console.log("First day of the month (index) after adjustment:", firstDay);
 
   const daysInMonth = DAYS_IN_MONTH[selectedMonth];
 
   const cells = [];
-  // Add empty cells for days before the first day of the month
   for (let i = 0; i < firstDay; i++) {
     cells.push(<CalendarCell key={`empty-${i}`} empty />);
   }
 
-  // Add cells for each day in the month
   for (let date = 1; date <= daysInMonth; date++) {
     cells.push(<CalendarCell key={date} date={date} holidays={holidays[date]} />);
   }
