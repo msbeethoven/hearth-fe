@@ -3,8 +3,8 @@ import CalendarCell from "./CalendarCell";
 
 test("renders CalendarCell with holidays", () => {
   const holidays = [
-    { localName: "Holiday 1", countryCode: "FR" },
-    { localName: "Holiday 2", countryCode: "VE" },
+    { localName: "Holiday 1", countryCode: "FR", date: "2024-1-1" },
+    { localName: "Holiday 2", countryCode: "VE", date: "2024-1-1" },
   ];
 
   render(

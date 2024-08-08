@@ -12,5 +12,6 @@ test("changes the selected country on dropdown selection", () => {
   );
 
   fireEvent.change(screen.getByRole("combobox"), { target: { value: "VE" } });
+  
   expect(handleChange).toHaveBeenCalledWith("VE");
 });

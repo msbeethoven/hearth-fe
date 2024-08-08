@@ -66,7 +66,11 @@ function Calendar({ selectedMonth, country1, country2 }: CalendarProps) {
   }
 
   for (let date = 1; date <= daysInMonth; date++) {
-    cells.push(<CalendarCell key={date} date={date} holidays={holidays[date]} />);
+    cells.push(<CalendarCell 
+      key={date} 
+      date={date} 
+      holidays={holidays[date]}
+      countryCode={country1} />);
   }
 
   return (
