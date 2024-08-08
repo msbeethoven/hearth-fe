@@ -1,23 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import { Cell, Holiday } from "../styles/CalendarCell.styles";
 
 interface CalendarCellProps {
   date?: number;
   holidays?: any[];
   empty?: boolean;
 }
-
-const Cell = styled.div<{ empty: boolean }>`
-  padding: 8px;
-  background-color: ${(props) => (props.empty ? "#f0f0f0" : "#fff")};
-  border: 1px solid #ddd;
-  height: 100px;
-  overflow: auto;
-`;
-
-const Holiday = styled.div<{ color: string }>`
-  color: ${(props) => props.color};
-`;
 
 function CalendarCell({ date, holidays, empty = false }: CalendarCellProps) {
   return (

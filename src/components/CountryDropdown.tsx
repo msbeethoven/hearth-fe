@@ -1,12 +1,5 @@
-// CountryDropdown.tsx
 import React from "react";
-import styled from "styled-components";
-
-const Select = styled.select`
-  height: 40px;
-  width: 160px;
-  font-size: 20px;
-`;
+import { Select } from "../styles/CountryDropdown.styles";
 
 interface Props {
   selectedCountry: string;
